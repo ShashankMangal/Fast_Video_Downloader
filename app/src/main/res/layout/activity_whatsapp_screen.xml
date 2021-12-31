@@ -1,9 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Screens.WhatsappScreen">
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#f8f7fc"
+        tools:context=".Screens.WhatsappScreen">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <RelativeLayout
+            android:id="@+id/whatsappRel"
+            android:layout_width="match_parent"
+            android:layout_height="230dp"
+            android:background="@color/mainColor">
+
+            <ImageView
+                android:id="@+id/whatsappBack"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_back"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="8dp"
+                />
+
+            <ImageView
+                android:id="@+id/whatsappLayoutlogo"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/newwhatsapp" />
+
+            <TextView
+                android:id="@+id/whatsappName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/whatsappLayoutlogo"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/aldrich"
+                android:text="Whatsapp"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/whatsappSubTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/whatsappName"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/aldrich"
+                android:text="For All Social Media Platform"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="normal" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/whatsappRel"
+            >
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:id="@+id/input"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/whatsappUrl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="URL Here...." />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:layout_marginHorizontal="18dp"
+                android:layout_below="@id/input"
+                >
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Download"
+                    android:id="@+id/whatsappDownloadBtn"
+                    android:layout_marginRight="8dp"
+                    android:padding="16dp"
+                    />
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="8dp"
+                    android:id="@+id/whatsappPasteBtn"
+                    android:layout_height="wrap_content"
+                    android:text="Paste"
+                    android:padding="16dp"
+                    />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</layout>

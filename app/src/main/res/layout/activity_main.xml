@@ -79,7 +79,7 @@
                         android:layout_height="50dp"
                         android:layout_centerVertical="true"
                         android:layout_marginStart="12sp"
-                        android:src="@drawable/whatsapp_logo" />
+                        android:src="@drawable/newwhatsapp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
