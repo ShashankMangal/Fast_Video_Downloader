@@ -8,8 +8,10 @@ import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.TextView;
 
 import com.google.android.material.tabs.TabLayoutMediator;
@@ -37,6 +39,14 @@ public class WhatsappScreen extends AppCompatActivity {
 
         initview();
 
+        binding.whatsappBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                finish();
+            }
+        });
+
     }
 
     private void initview() {
@@ -54,8 +64,7 @@ public class WhatsappScreen extends AppCompatActivity {
         for(int i=0; i<binding.tabLayout.getTabCount(); i++)
         {
             TextView tv =(TextView) LayoutInflater.from(activity).inflate(R.layout.custom_tab, null);
-            binding.tabLayout.getTabAt(i).setCustomView(tv);
-
+            binding.tabLayout.getTabAt(i).setText(adapter.fragmentTitleList.get(i));
         }
     }
 
