@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Fragments.VideoFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+<layout>
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:padding="8dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Video Fragment" />
+        android:id="@+id/refreshVideos"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".Fragments.VideoFragment">
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/whatsappRecyclerView"
+            tools:listitem="@layout/whatsapp_item_layout"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="2"
+            />
 
-</FrameLayout>
+
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</layout>

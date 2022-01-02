@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:padding="8dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/refresh"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Fragments.ImageFragment">
+<androidx.recyclerview.widget.RecyclerView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/whatsappRecyclerView"
+    tools:listitem="@layout/whatsapp_item_layout"
+    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+    app:spanCount="2"
+    />
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Image Fragment" />
 
-</FrameLayout>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</layout>
