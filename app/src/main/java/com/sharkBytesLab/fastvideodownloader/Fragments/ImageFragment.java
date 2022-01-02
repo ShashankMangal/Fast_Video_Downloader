@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.os.Environment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,44 +52,51 @@ public class ImageFragment extends Fragment {
 
     private void getData()
     {
-        whatsappStatusModel model;
+        try {
+            whatsappStatusModel model;
 
-        String targetPath = Environment.getExternalStorageDirectory().getAbsolutePath()+"/WhatsApp/Media/.statuses";
-        File targetDirectory = new File(targetPath);
-        File[] allFiles = targetDirectory.listFiles();
+            String targetPath = Environment.getExternalStorageDirectory().getAbsolutePath().toString()+"/WhatsApp/Media/.statuses";
+            File targetDirectory = new File(targetPath);
+            File[] allFiles = targetDirectory.listFiles();
 
-        String targetPathBusiness = Environment.getExternalStorageDirectory().getAbsolutePath()+"/WhatsApp Business/Media/.statuses";
-        File targetDirectoryBusiness = new File(targetPathBusiness);
-        File[] allFilesBusiness = targetDirectoryBusiness.listFiles();
+            String targetPathBusiness = Environment.getExternalStorageDirectory().getAbsolutePath().toString()+"/WhatsApp Business/Media/.statuses";
+            File targetDirectoryBusiness = new File(targetPathBusiness);
+            File[] allFilesBusiness = targetDirectoryBusiness.listFiles();
 
-        Arrays.sort(allFiles, ((o1,o2) -> {
-            if (o1.lastModified() > o2.lastModified()) return -1;
-            else if (o1.lastModified() < o2.lastModified()) return +1;
-            else return  0;
-        }));
+            Arrays.sort(allFiles, ((o1,o2) -> {
+                if (o1.lastModified() > o2.lastModified()) return -1;
+                else if (o1.lastModified() < o2.lastModified()) return +1;
+                else return  0;
+            }));
 
-        for(int i =0;i<allFiles.length;i++)
-        {
-            File file = allFiles[i];
-            if(Uri.fromFile(file).toString().endsWith(".png") || Uri.fromFile(file).toString().endsWith(".jpg"))
+            for(int i =0;i<allFiles.length;i++)
             {
-                model = new whatsappStatusModel("whats"+i, Uri.fromFile(file), allFiles[i].getAbsolutePath(), file.getName());
-                list.add(model);
+                File file = allFiles[i];
+                if(Uri.fromFile(file).toString().endsWith(".png") || Uri.fromFile(file).toString().endsWith(".jpg"))
+                {
+                    model = new whatsappStatusModel("whats"+i, Uri.fromFile(file), allFiles[i].getAbsolutePath(), file.getName());
+                    list.add(model);
+                }
             }
-        }  Arrays.sort(allFilesBusiness, ((o1,o2) -> {
-            if (o1.lastModified() > o2.lastModified()) return -1;
-            else if (o1.lastModified() < o2.lastModified()) return +1;
-            else return  0;
-        }));
+            Arrays.sort(allFilesBusiness, ((o1, o2) -> {
+                if (o1.lastModified() > o2.lastModified()) return -1;
+                else if (o1.lastModified() < o2.lastModified()) return +1;
+                else return  0;
+            }));
 
-        for(int i =0;i<allFilesBusiness.length;i++)
-        {
-            File file = allFilesBusiness[i];
-            if(Uri.fromFile(file).toString().endsWith(".png") || Uri.fromFile(file).toString().endsWith(".jpg"))
+            for(int i =0;i<allFilesBusiness.length;i++)
             {
-                model = new whatsappStatusModel("whatsBusiness"+i, Uri.fromFile(file), allFilesBusiness[i].getAbsolutePath(), file.getName());
-                list.add(model);
+                File file = allFilesBusiness[i];
+                if(Uri.fromFile(file).toString().endsWith(".png") || Uri.fromFile(file).toString().endsWith(".jpg"))
+                {
+                    model = new whatsappStatusModel("whatsBusiness"+i, Uri.fromFile(file), allFilesBusiness[i].getAbsolutePath(), file.getName());
+                    list.add(model);
+                }
             }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            Log.i("Image Error :",e.getMessage());
         }
         adapter = new whatsappAdapter(list, getActivity());
         binding.whatsappRecyclerView.setAdapter(adapter);
