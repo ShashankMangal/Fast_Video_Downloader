@@ -83,6 +83,26 @@ public class MainActivity extends AppCompatActivity {
                 activateReviewInfo();
             }
         });
+
+        binding.shareApp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                try {
+                    Intent intent = new Intent(Intent.ACTION_SEND);
+                    intent.setType("text/plain");
+                    String shareMsg = "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID + "\n\n";
+                    intent.putExtra(Intent.EXTRA_SUBJECT, "Fast Video Downloader");
+                    intent.putExtra(Intent.EXTRA_TEXT, shareMsg);
+                    startActivity(Intent.createChooser(intent, "Share Via"));
+                }catch(Exception e)
+                {
+                    Toast.makeText(getApplicationContext(), "Error Occurred :"+e.getMessage().toString(), Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+
         checkPermission();
 
 
