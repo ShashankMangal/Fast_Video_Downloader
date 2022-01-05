@@ -19,6 +19,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
 import android.provider.Settings;
 import android.view.View;
 import android.widget.Toast;
@@ -34,6 +35,7 @@ import com.karumi.dexter.MultiplePermissionsReport;
 import com.karumi.dexter.PermissionToken;
 import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
+import com.sharkBytesLab.fastvideodownloader.Screens.AboutScreen;
 import com.sharkBytesLab.fastvideodownloader.Screens.FacebookScreen;
 import com.sharkBytesLab.fastvideodownloader.Screens.ShareChatScreen;
 import com.sharkBytesLab.fastvideodownloader.Screens.WhatsappScreen;
@@ -46,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
     private ReviewInfo reviewInfo;
     private ReviewManager reviewManager;
+    boolean isPressed = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,11 +105,42 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        binding.aboutUs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, AboutScreen.class));
+                finish();
+            }
+        });
+
 
         checkPermission();
 
 
 
+
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        if(isPressed)
+        {
+            finishAffinity();
+            System.exit(0);
+        }
+        else
+        {
+            Toast.makeText(getApplicationContext(), "Press back again to Exit.", Toast.LENGTH_SHORT).show();
+            isPressed = true;
+        }
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                isPressed = false;
+            }
+        };
+        new Handler().postDelayed(runnable,2000);
 
     }
 
@@ -140,7 +174,7 @@ public class MainActivity extends AppCompatActivity {
                     dialog.addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void result) {
-                            Toast.makeText(getApplicationContext(), "Thanks for Rating :)", Toast.LENGTH_SHORT).show();
+
                         }
                     });
 
