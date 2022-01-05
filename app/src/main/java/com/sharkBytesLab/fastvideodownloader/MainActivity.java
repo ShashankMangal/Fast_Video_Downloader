@@ -23,6 +23,12 @@ import android.provider.Settings;
 import android.view.View;
 import android.widget.Toast;
 
+import com.google.android.play.core.review.ReviewInfo;
+import com.google.android.play.core.review.ReviewManager;
+import com.google.android.play.core.review.ReviewManagerFactory;
+import com.google.android.play.core.tasks.OnCompleteListener;
+import com.google.android.play.core.tasks.OnSuccessListener;
+import com.google.android.play.core.tasks.Task;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.MultiplePermissionsReport;
 import com.karumi.dexter.PermissionToken;
@@ -38,6 +44,8 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
+    private ReviewInfo reviewInfo;
+    private ReviewManager reviewManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +76,17 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        binding.rateApp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                activateReviewInfo();
+            }
+        });
         checkPermission();
+
+
+
 
     }
 
@@ -84,6 +102,36 @@ public class MainActivity extends AppCompatActivity {
             }
             @Override public void onPermissionRationaleShouldBeShown(List<PermissionRequest> permissions, PermissionToken token) {/* ... */}
         }).check();
+    }
+
+    void activateReviewInfo()
+    {
+        reviewManager = ReviewManagerFactory.create(MainActivity.this);
+
+        Task<ReviewInfo> task = reviewManager.requestReviewFlow();
+        task.addOnCompleteListener(new OnCompleteListener<ReviewInfo>() {
+            @Override
+            public void onComplete(@NonNull Task<ReviewInfo> task) {
+                if(task.isSuccessful())
+                {
+                    reviewInfo = task.getResult();
+
+                    Task<Void> dialog = reviewManager.launchReviewFlow(MainActivity.this, reviewInfo);
+                    dialog.addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void result) {
+                            Toast.makeText(getApplicationContext(), "Thanks for Rating :)", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
+                }
+                else
+                {
+                    Toast.makeText(getApplicationContext(), "Error.", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
     }
 
 //    private void showPermissionDialog(){
