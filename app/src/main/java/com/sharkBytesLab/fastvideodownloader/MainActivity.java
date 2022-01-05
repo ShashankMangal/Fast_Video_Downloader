@@ -29,6 +29,7 @@ import com.karumi.dexter.PermissionToken;
 import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
 import com.sharkBytesLab.fastvideodownloader.Screens.FacebookScreen;
+import com.sharkBytesLab.fastvideodownloader.Screens.ShareChatScreen;
 import com.sharkBytesLab.fastvideodownloader.Screens.WhatsappScreen;
 import com.sharkBytesLab.fastvideodownloader.databinding.ActivityMainBinding;
 
@@ -58,11 +59,16 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        binding.sharechat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), ShareChatScreen.class));
+                finish();
+            }
+        });
         checkPermission();
-//        if(!checkPermisions())
-//        {
-//        showPermissionDialog();
-//        }
+
     }
 
     private void checkPermission(){

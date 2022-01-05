@@ -12,6 +12,7 @@ public class Util {
 
     public static File RootDirectoryWhatsapp = new File(Environment.getExternalStorageDirectory()+"/Download/Fast Video Downloader/Whatsapp Status");
     public static String RootDirectoryFacebook = "/Fast Video Downloader/Facebook";
+    public static String RootDirectoryShareChat = "/Fast Video Downloader/ShareChat";
 
 
 
