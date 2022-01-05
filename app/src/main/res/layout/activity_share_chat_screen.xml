@@ -49,7 +49,7 @@
             android:layout_below="@+id/sharechatName"
             android:layout_centerHorizontal="true"
             android:fontFamily="@font/aldrich"
-            android:text="For All Social Media Platform"
+            android:text="Download ShareChat Videos For Free"
             android:textColor="@color/black"
             android:textSize="15sp"
             android:textStyle="normal" />

@@ -48,8 +48,9 @@ public class MainActivity extends AppCompatActivity {
         binding.whatsapp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), WhatsappScreen.class));
-                finish();
+//                startActivity(new Intent(getApplicationContext(), WhatsappScreen.class));
+//                finish();
+                Toast.makeText(getApplicationContext(), "This feature is Under Maintenance.", Toast.LENGTH_SHORT).show();
             }
         });
         binding.facebook.setOnClickListener(new View.OnClickListener() {

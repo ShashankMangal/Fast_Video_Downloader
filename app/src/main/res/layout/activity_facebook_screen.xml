@@ -48,7 +48,7 @@
                 android:layout_below="@+id/sharechatName"
                 android:layout_centerHorizontal="true"
                 android:fontFamily="@font/aldrich"
-                android:text="For All Social Media Platform"
+                android:text="Download FaceBook Videos For Free"
                 android:textColor="@color/black"
                 android:textSize="15sp"
                 android:textStyle="normal" />
@@ -58,16 +58,14 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/facebookRel"
-            >
+            android:layout_below="@id/facebookRel">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_height="wrap_content"
-                android:padding="16dp"
                 android:id="@+id/input"
-                >
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/facebookUrl"
@@ -78,31 +76,32 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <LinearLayout
+                android:id="@+id/ll"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:weightSum="2"
-                android:layout_marginHorizontal="18dp"
                 android:layout_below="@id/input"
-                >
+                android:layout_marginHorizontal="18dp"
+                android:weightSum="2">
+
                 <com.google.android.material.button.MaterialButton
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:text="Download"
                     android:id="@+id/facebookDownloadBtn"
-                    android:layout_marginRight="8dp"
-                    android:padding="16dp"
-                    />
-                <com.google.android.material.button.MaterialButton
                     android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_marginLeft="8dp"
-                    android:id="@+id/facebookPasteBtn"
                     android:layout_height="wrap_content"
-                    android:text="Paste"
+                    android:layout_marginRight="8dp"
+                    android:layout_weight="1"
                     android:padding="16dp"
-                    />
+                    android:text="Download" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/facebookPasteBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1"
+                    android:padding="16dp"
+                    android:text="Paste" />
             </LinearLayout>
+
 
         </RelativeLayout>
 

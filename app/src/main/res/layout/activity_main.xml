@@ -63,65 +63,7 @@
                 android:orientation="vertical"
                 android:padding="12dp">
 
-                <RelativeLayout
-                    android:id="@+id/whatsapp"
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:layout_marginHorizontal="5dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="5dp"
-                    android:background="@drawable/rectangle"
-                    android:elevation="3dp">
 
-                    <ImageView
-                        android:id="@+id/whatsappLogo"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_centerVertical="true"
-                        android:layout_marginStart="12sp"
-                        android:src="@drawable/newwhatsapp" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:layout_margin="10dp"
-                        android:layout_toLeftOf="@id/whatsappArrow"
-                        android:layout_toRightOf="@id/whatsappLogo"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="12dp"
-                            android:fontFamily="@font/aldrich"
-                            android:text="Whatsapp"
-                            android:textColor="@color/mainColor"
-                            android:textSize="22sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="12dp"
-                            android:fontFamily="@font/aldrich"
-                            android:text="Download Whatsapp Status"
-                            android:textColor="@color/mainColor"
-                            android:textSize="16sp"
-                            android:textStyle="normal" />
-
-                    </LinearLayout>
-
-                    <ImageView
-                        android:id="@+id/whatsappArrow"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"
-                        android:layout_marginEnd="10dp"
-                        android:background="@drawable/orangecircle"
-                        android:src="@drawable/ic_arrow" />
-                </RelativeLayout>
                 <RelativeLayout
                     android:id="@+id/facebook"
                     android:layout_width="match_parent"
@@ -181,7 +123,6 @@
                         android:background="@drawable/orangecircle"
                         android:src="@drawable/ic_arrow" />
                 </RelativeLayout>
-
                 <RelativeLayout
                     android:id="@+id/sharechat"
                     android:layout_width="match_parent"
@@ -233,6 +174,65 @@
 
                     <ImageView
                         android:id="@+id/sharechatArrow"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/orangecircle"
+                        android:src="@drawable/ic_arrow" />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/whatsapp"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/rectangle"
+                    android:elevation="3dp">
+
+                    <ImageView
+                        android:id="@+id/whatsappLogo"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="12sp"
+                        android:src="@drawable/newwhatsapp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="10dp"
+                        android:layout_toLeftOf="@id/whatsappArrow"
+                        android:layout_toRightOf="@id/whatsappLogo"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="12dp"
+                            android:fontFamily="@font/aldrich"
+                            android:text="Whatsapp"
+                            android:textColor="@color/mainColor"
+                            android:textSize="22sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="12dp"
+                            android:fontFamily="@font/aldrich"
+                            android:text="Download Whatsapp Status"
+                            android:textColor="@color/mainColor"
+                            android:textSize="16sp"
+                            android:textStyle="normal" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/whatsappArrow"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_alignParentEnd="true"
