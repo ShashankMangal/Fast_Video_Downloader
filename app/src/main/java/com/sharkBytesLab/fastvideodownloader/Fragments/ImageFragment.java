@@ -55,11 +55,11 @@ public class ImageFragment extends Fragment {
         try {
             whatsappStatusModel model;
 
-            String targetPath = Environment.getExternalStorageDirectory().getAbsolutePath().toString()+"/WhatsApp/Media/.statuses";
+            String targetPath = Environment.getExternalStorageDirectory().getAbsolutePath().toString()+"/WhatsApp/Media/.Statuses";
             File targetDirectory = new File(targetPath);
             File[] allFiles = targetDirectory.listFiles();
 
-            String targetPathBusiness = Environment.getExternalStorageDirectory().getAbsolutePath().toString()+"/WhatsApp Business/Media/.statuses";
+            String targetPathBusiness = Environment.getExternalStorageDirectory().getAbsolutePath().toString()+"/WhatsApp Business/Media/.Statuses";
             File targetDirectoryBusiness = new File(targetPathBusiness);
             File[] allFilesBusiness = targetDirectoryBusiness.listFiles();
 
