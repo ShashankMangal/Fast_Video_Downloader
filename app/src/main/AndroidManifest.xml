@@ -16,6 +16,8 @@
         android:roundIcon="@mipmap/launcher_icon_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FastVideoDownloader">
+
+
         <activity
             android:name=".Policy.TermsActivity"
             android:exported="false" />

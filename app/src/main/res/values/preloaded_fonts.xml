@@ -3,6 +3,7 @@
     <array name="preloaded_fonts" translatable="false">
         <item>@font/aldrich</item>
         <item>@font/allerta</item>
+        <item>@font/atomic_age</item>
         <item>@font/roboto_black</item>
         <item>@font/roboto_bold</item>
     </array>
