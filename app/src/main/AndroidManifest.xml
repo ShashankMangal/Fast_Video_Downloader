@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.sharkBytesLab.fastvideodownloader">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -15,6 +16,12 @@
         android:roundIcon="@mipmap/launcher_icon_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FastVideoDownloader">
+        <activity
+            android:name=".Policy.TermsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Policy.PrivacyPolicyActivity"
+            android:exported="false" />
         <activity
             android:name=".Screens.AboutScreen"
             android:exported="false" />

@@ -10,6 +10,8 @@ import android.widget.TextView;
 import com.google.android.material.button.MaterialButton;
 import com.sharkBytesLab.fastvideodownloader.BuildConfig;
 import com.sharkBytesLab.fastvideodownloader.MainActivity;
+import com.sharkBytesLab.fastvideodownloader.Policy.PrivacyPolicyActivity;
+import com.sharkBytesLab.fastvideodownloader.Policy.TermsActivity;
 import com.sharkBytesLab.fastvideodownloader.R;
 import com.sharkBytesLab.fastvideodownloader.databinding.ActivityAboutScreenBinding;
 
@@ -35,6 +37,22 @@ public class AboutScreen extends AppCompatActivity {
         });
 
         binding.version.setText("Version : "+String.valueOf(BuildConfig.VERSION_NAME));
+
+        binding.policy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(AboutScreen.this, PrivacyPolicyActivity.class));
+                finish();
+            }
+        });
+
+        binding.terms.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(AboutScreen.this, TermsActivity.class));
+                finish();
+            }
+        });
 
 
 
