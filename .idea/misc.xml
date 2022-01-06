@@ -14,7 +14,7 @@
         <entry key="..\:/Android Apps By ShaShank/APPS FOR INTERN/FastVideoDownloader/app/src/main/res/layout/activity_main.xml" value="0.27291666666666664" />
         <entry key="..\:/Android Apps By ShaShank/APPS FOR INTERN/FastVideoDownloader/app/src/main/res/layout/activity_share_chat_screen.xml" value="0.27291666666666664" />
         <entry key="..\:/Android Apps By ShaShank/APPS FOR INTERN/FastVideoDownloader/app/src/main/res/layout/activity_whatsapp_screen.xml" value="0.27291666666666664" />
-        <entry key="..\:/Android Apps By ShaShank/APPS FOR INTERN/Fast_Video_Downloader/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.3828125" />
+        <entry key="..\:/Android Apps By ShaShank/APPS FOR INTERN/Fast_Video_Downloader/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.28055555555555556" />
         <entry key="..\:/Android Apps By ShaShank/APPS FOR INTERN/Fast_Video_Downloader/app/src/main/res/drawable/selected_tab.xml" value="0.3828125" />
         <entry key="..\:/Android Apps By ShaShank/APPS FOR INTERN/Fast_Video_Downloader/app/src/main/res/drawable/tab_rect.xml" value="0.3828125" />
         <entry key="..\:/Android Apps By ShaShank/APPS FOR INTERN/Fast_Video_Downloader/app/src/main/res/drawable/tab_selector.xml" value="0.3828125" />
@@ -27,8 +27,8 @@
         <entry key="..\:/Android Apps By ShaShank/APPS FOR INTERN/Fast_Video_Downloader/app/src/main/res/layout/custom_tab.xml" value="0.36666666666666664" />
         <entry key="..\:/Android Apps By ShaShank/APPS FOR INTERN/Fast_Video_Downloader/app/src/main/res/layout/fragment_image.xml" value="0.36666666666666664" />
         <entry key="..\:/Android Apps By ShaShank/APPS FOR INTERN/Fast_Video_Downloader/app/src/main/res/layout/fragment_video.xml" value="0.36666666666666664" />
-        <entry key="..\:/Android Apps By ShaShank/APPS FOR INTERN/Fast_Video_Downloader/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.22135416666666666" />
-        <entry key="..\:/Android Apps By ShaShank/APPS FOR INTERN/Fast_Video_Downloader/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.3828125" />
+        <entry key="..\:/Android Apps By ShaShank/APPS FOR INTERN/Fast_Video_Downloader/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2890625" />
+        <entry key="..\:/Android Apps By ShaShank/APPS FOR INTERN/Fast_Video_Downloader/app/src/main/res/mipmap-anydpi-v26/launcher_icon.xml" value="0.28055555555555556" />
       </map>
     </option>
   </component>
