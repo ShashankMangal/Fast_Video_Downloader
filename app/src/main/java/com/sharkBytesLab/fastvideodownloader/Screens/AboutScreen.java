@@ -11,24 +11,22 @@ import com.google.android.material.button.MaterialButton;
 import com.sharkBytesLab.fastvideodownloader.BuildConfig;
 import com.sharkBytesLab.fastvideodownloader.MainActivity;
 import com.sharkBytesLab.fastvideodownloader.R;
+import com.sharkBytesLab.fastvideodownloader.databinding.ActivityAboutScreenBinding;
 
 public class AboutScreen extends AppCompatActivity {
 
-    //private ActivityAboutScreenBinding binding;
-    private MaterialButton button;
-    private TextView version;
+    private ActivityAboutScreenBinding binding;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        
-        setContentView(R.layout.activity_about_screen);
+        binding= ActivityAboutScreenBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        button = findViewById(R.id.backToMain);
-        version = findViewById(R.id.version);
 
-        button.setOnClickListener(new View.OnClickListener() {
+
+        binding.backToMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(AboutScreen.this, MainActivity.class));
@@ -36,7 +34,7 @@ public class AboutScreen extends AppCompatActivity {
             }
         });
 
-        version.setText("Version : "+String.valueOf(BuildConfig.VERSION_NAME));
+        binding.version.setText("Version : "+String.valueOf(BuildConfig.VERSION_NAME));
 
 
 

@@ -86,7 +86,7 @@ public class FacebookScreen extends AppCompatActivity {
             url = new URL(binding.facebookUrl.getText().toString());
             String host = url.getHost();
 
-            if(host.contains("fb.watch"))
+            if(host.contains("fb"))
             {
                 new callGetFbData().execute(binding.facebookUrl.getText().toString());
             }else

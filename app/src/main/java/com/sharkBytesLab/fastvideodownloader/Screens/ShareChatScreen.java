@@ -75,7 +75,7 @@ public class ShareChatScreen extends AppCompatActivity {
             url = new URL(binding.sharechatUrl.getText().toString());
             String host = url.getHost();
 
-            if(host.contains("sharechat.com"))
+            if(host.contains("sharechat"))
                 new callGetShareChatData().execute(binding.sharechatUrl.getText().toString());
         } catch (Exception e) {
             e.printStackTrace();
