@@ -2,7 +2,6 @@ package com.sharkBytesLab.fastvideodownloader;
 
 import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
-import static android.os.Build.VERSION.SDK;
 import static android.os.Build.VERSION.SDK_INT;
 
 import androidx.annotation.NonNull;
@@ -39,6 +38,7 @@ import com.sharkBytesLab.fastvideodownloader.Screens.AboutScreen;
 import com.sharkBytesLab.fastvideodownloader.Screens.FacebookScreen;
 import com.sharkBytesLab.fastvideodownloader.Screens.ShareChatScreen;
 import com.sharkBytesLab.fastvideodownloader.Screens.WhatsappScreen;
+import com.sharkBytesLab.fastvideodownloader.Screens.YoutubeScreen;
 import com.sharkBytesLab.fastvideodownloader.databinding.ActivityMainBinding;
 
 import java.util.List;
@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
     private ReviewInfo reviewInfo;
     private ReviewManager reviewManager;
-    boolean isPressed = false;
+    private boolean isPressed = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
         binding.youtube.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), FacebookScreen.class));
+                startActivity(new Intent(getApplicationContext(), YoutubeScreen.class));
                 finish();
             }
         });
