@@ -84,8 +84,9 @@ public class MainActivity extends AppCompatActivity {
         binding.youtube.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), YoutubeScreen.class));
-                finish();
+//                startActivity(new Intent(getApplicationContext(), YoutubeScreen.class));
+//                finish();
+                Toast.makeText(getApplicationContext(), "This feature is Under Maintenance.", Toast.LENGTH_SHORT).show();
             }
         });
 
