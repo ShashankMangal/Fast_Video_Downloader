@@ -81,6 +81,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        binding.youtube.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), FacebookScreen.class));
+                finish();
+            }
+        });
+
         binding.sharechat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -197,78 +205,4 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-//    private void showPermissionDialog(){
-//        if(SDK_INT >= Build.VERSION_CODES.R)
-//        {
-//
-//            try {
-//                Intent intent = new Intent(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
-//                intent.addCategory("android.intent.category.DEFAULT");
-//                intent.setData(Uri.parse(String.format("package:%s", new Object[]{getApplicationContext().getPackageName()})));
-//                startActivityForResult(intent, 100);
-//            } catch (Exception e) {
-//                Intent intent = new Intent(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
-//                startActivityForResult(intent, 100);
-//            }
-//        }else
-//        {
-//            ActivityCompat.requestPermissions(MainActivity.this, new String[]{WRITE_EXTERNAL_STORAGE, READ_EXTERNAL_STORAGE}, 99);
-//        }
-//    }
-
-//    private boolean checkPermisions(){
-//        if(SDK_INT >= Build.VERSION_CODES.R)
-//        {
-//            return Environment.isExternalStorageManager();
-//        }else
-//        {
-//            int write = ContextCompat.checkSelfPermission(getApplicationContext(), WRITE_EXTERNAL_STORAGE);
-//            int read = ContextCompat.checkSelfPermission(getApplicationContext(), READ_EXTERNAL_STORAGE);
-//
-//            return write == PackageManager.PERMISSION_GRANTED &&
-//                    read == PackageManager.PERMISSION_GRANTED;
-//        }
-//    }
-//
-//    @Override
-//    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-//        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-//
-//        if(requestCode == 99)
-//        {
-//            if(grantResults.length > 0)
-//            {
-//                boolean write = grantResults[0] == PackageManager.PERMISSION_GRANTED;
-//                boolean read = grantResults[1] == PackageManager.PERMISSION_GRANTED;
-//
-//                if(read&&write)
-//                {
-//
-//                }else
-//                {
-//
-//                }
-//            }
-//        }
-//
-//    }
-//
-//    @Override
-//    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-//        super.onActivityResult(requestCode, resultCode, data);
-//
-//        if(requestCode == 100)
-//        {
-//            if(SDK_INT >= Build.VERSION_CODES.R)
-//            {
-//                if(Environment.isExternalStorageManager())
-//                {
-//
-//                }else
-//                {
-//                    Toast.makeText(getApplicationContext(), "Permission is required!", Toast.LENGTH_SHORT).show();
-//                }
-//            }
-//        }
-//    }
 }
