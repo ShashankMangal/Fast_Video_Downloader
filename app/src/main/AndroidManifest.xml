@@ -19,25 +19,25 @@
 
 
         <activity
-            android:name=".Policy.TermsActivity"
+            android:name="com.sharkBytesLab.fastvideodownloader.Policy.TermsActivity"
             android:exported="false" />
         <activity
-            android:name=".Policy.PrivacyPolicyActivity"
+            android:name="com.sharkBytesLab.fastvideodownloader.Policy.PrivacyPolicyActivity"
             android:exported="false" />
         <activity
-            android:name=".Screens.AboutScreen"
+            android:name="com.sharkBytesLab.fastvideodownloader.Screens.AboutScreen"
             android:exported="false" />
         <activity
-            android:name=".Screens.WhatsappScreen"
+            android:name="com.sharkBytesLab.fastvideodownloader.Screens.WhatsappScreen"
             android:exported="false" />
         <activity
-            android:name=".Screens.FacebookScreen"
+            android:name="com.sharkBytesLab.fastvideodownloader.Screens.FacebookScreen"
             android:exported="false" />
         <activity
-            android:name=".Screens.ShareChatScreen"
+            android:name="com.sharkBytesLab.fastvideodownloader.Screens.ShareChatScreen"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.sharkBytesLab.fastvideodownloader.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.sharkBytesLab.fastvideodownloader.R;
 import com.sharkBytesLab.fastvideodownloader.Screens.AboutScreen;
 import com.sharkBytesLab.fastvideodownloader.databinding.ActivityTermsBinding;
 

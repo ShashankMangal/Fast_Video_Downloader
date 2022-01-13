@@ -16,7 +16,6 @@ import android.view.ViewGroup;
 import com.sharkBytesLab.fastvideodownloader.Adapter.whatsappAdapter;
 import com.sharkBytesLab.fastvideodownloader.Model.whatsappStatusModel;
 import com.sharkBytesLab.fastvideodownloader.R;
-import com.sharkBytesLab.fastvideodownloader.databinding.FragmentImageBinding;
 import com.sharkBytesLab.fastvideodownloader.databinding.FragmentVideoBinding;
 
 import java.io.File;

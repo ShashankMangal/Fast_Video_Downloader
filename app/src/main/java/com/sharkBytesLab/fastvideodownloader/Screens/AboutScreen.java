@@ -5,14 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
 
-import com.google.android.material.button.MaterialButton;
 import com.sharkBytesLab.fastvideodownloader.BuildConfig;
 import com.sharkBytesLab.fastvideodownloader.MainActivity;
 import com.sharkBytesLab.fastvideodownloader.Policy.PrivacyPolicyActivity;
 import com.sharkBytesLab.fastvideodownloader.Policy.TermsActivity;
-import com.sharkBytesLab.fastvideodownloader.R;
 import com.sharkBytesLab.fastvideodownloader.databinding.ActivityAboutScreenBinding;
 
 public class AboutScreen extends AppCompatActivity {

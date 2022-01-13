@@ -2,25 +2,14 @@ package com.sharkBytesLab.fastvideodownloader;
 
 import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
-import static android.os.Build.VERSION.SDK;
-import static android.os.Build.VERSION.SDK_INT;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 import androidx.databinding.DataBindingUtil;
 
-import android.Manifest;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.Handler;
-import android.provider.Settings;
 import android.view.View;
 import android.widget.Toast;
 
@@ -38,7 +27,6 @@ import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
 import com.sharkBytesLab.fastvideodownloader.Screens.AboutScreen;
 import com.sharkBytesLab.fastvideodownloader.Screens.FacebookScreen;
 import com.sharkBytesLab.fastvideodownloader.Screens.ShareChatScreen;
-import com.sharkBytesLab.fastvideodownloader.Screens.WhatsappScreen;
 import com.sharkBytesLab.fastvideodownloader.databinding.ActivityMainBinding;
 
 import java.util.List;

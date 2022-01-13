@@ -10,7 +10,6 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.sharkBytesLab.fastvideodownloader.MainActivity;
-import com.sharkBytesLab.fastvideodownloader.R;
 import com.sharkBytesLab.fastvideodownloader.Util;
 import com.sharkBytesLab.fastvideodownloader.databinding.ActivityShareChatScreenBinding;
 

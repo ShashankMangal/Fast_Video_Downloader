@@ -19,7 +19,6 @@ import com.sharkBytesLab.fastvideodownloader.Fragments.ImageFragment;
 import com.sharkBytesLab.fastvideodownloader.Fragments.VideoFragment;
 import com.sharkBytesLab.fastvideodownloader.MainActivity;
 import com.sharkBytesLab.fastvideodownloader.R;
-import com.sharkBytesLab.fastvideodownloader.databinding.ActivityMainBinding;
 import com.sharkBytesLab.fastvideodownloader.databinding.ActivityWhatsappScreenBinding;
 
 import java.util.ArrayList;

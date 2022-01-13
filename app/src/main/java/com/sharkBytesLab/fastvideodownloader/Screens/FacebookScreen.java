@@ -5,14 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
 import com.sharkBytesLab.fastvideodownloader.MainActivity;
-import com.sharkBytesLab.fastvideodownloader.R;
 import com.sharkBytesLab.fastvideodownloader.Util;
 import com.sharkBytesLab.fastvideodownloader.databinding.ActivityFacebookScreenBinding;
 
@@ -21,7 +19,6 @@ import org.jsoup.nodes.Document;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
-import java.net.URI;
 import java.net.URL;
 
 public class FacebookScreen extends AppCompatActivity {
