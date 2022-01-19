@@ -23,12 +23,6 @@ import android.provider.Settings;
 import android.view.View;
 import android.widget.Toast;
 
-import com.google.android.play.core.review.ReviewInfo;
-import com.google.android.play.core.review.ReviewManager;
-import com.google.android.play.core.review.ReviewManagerFactory;
-import com.google.android.play.core.tasks.OnCompleteListener;
-import com.google.android.play.core.tasks.OnSuccessListener;
-import com.google.android.play.core.tasks.Task;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.MultiplePermissionsReport;
 import com.karumi.dexter.PermissionToken;
@@ -46,15 +40,13 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
-    private ReviewInfo reviewInfo;
-    private ReviewManager reviewManager;
     private boolean isPressed = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
 
         binding.whatsapp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,7 +93,9 @@ public class MainActivity extends AppCompatActivity {
         binding.rateApp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                activateReviewInfo();
+
+                Toast.makeText(getApplicationContext(), "This feature is Under Maintenance.", Toast.LENGTH_SHORT).show();
+
             }
         });
 
@@ -176,34 +170,6 @@ public class MainActivity extends AppCompatActivity {
         }).check();
     }
 
-    void activateReviewInfo()
-    {
-        reviewManager = ReviewManagerFactory.create(MainActivity.this);
 
-        Task<ReviewInfo> task = reviewManager.requestReviewFlow();
-        task.addOnCompleteListener(new OnCompleteListener<ReviewInfo>() {
-            @Override
-            public void onComplete(@NonNull Task<ReviewInfo> task) {
-                if(task.isSuccessful())
-                {
-                    reviewInfo = task.getResult();
-
-                    Task<Void> dialog = reviewManager.launchReviewFlow(MainActivity.this, reviewInfo);
-                    dialog.addOnSuccessListener(new OnSuccessListener<Void>() {
-                        @Override
-                        public void onSuccess(Void result) {
-
-                        }
-                    });
-
-                }
-                else
-                {
-                    Toast.makeText(getApplicationContext(), "Error.", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-
-    }
 
 }
