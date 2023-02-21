@@ -23,6 +23,13 @@ import android.provider.Settings;
 import android.view.View;
 import android.widget.Toast;
 
+import com.applovin.mediation.MaxAd;
+import com.applovin.mediation.MaxAdListener;
+import com.applovin.mediation.MaxError;
+import com.applovin.mediation.ads.MaxAdView;
+import com.applovin.mediation.ads.MaxInterstitialAd;
+import com.applovin.sdk.AppLovinSdk;
+import com.applovin.sdk.AppLovinSdkConfiguration;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.MultiplePermissionsReport;
 import com.karumi.dexter.PermissionToken;
@@ -36,17 +43,36 @@ import com.sharkBytesLab.fastvideodownloader.Screens.YoutubeScreen;
 import com.sharkBytesLab.fastvideodownloader.databinding.ActivityMainBinding;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements MaxAdListener{
 
     private ActivityMainBinding binding;
     private boolean isPressed = false;
+    private MaxInterstitialAd interstitialAd;
+    private int retryAttempt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
+
+
+        AppLovinSdk.getInstance( this ).setMediationProvider( "max" );
+        AppLovinSdk.initializeSdk( this, new AppLovinSdk.SdkInitializationListener() {
+            @Override
+            public void onSdkInitialized(final AppLovinSdkConfiguration configuration)
+            {
+                // AppLovin SDK is initialized, start loading ads
+            }
+        } );
+
+        binding.applovinAd.loadAd();
+        interstitialAd = new MaxInterstitialAd( "5f8c3eee990b8511", this );
+        interstitialAd.setListener( this );
+        // Load the first ad
+        interstitialAd.loadAd();
 
         binding.whatsapp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,7 +86,10 @@ public class MainActivity extends AppCompatActivity {
         binding.instagram.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                if ( interstitialAd.isReady() )
+                {
+                    interstitialAd.showAd();
+                }
                 Toast.makeText(getApplicationContext(), "This feature is Under Maintenance.", Toast.LENGTH_SHORT).show();
             }
         });
@@ -68,6 +97,10 @@ public class MainActivity extends AppCompatActivity {
         binding.facebook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if ( interstitialAd.isReady() )
+                {
+                    interstitialAd.showAd();
+                }
                 startActivity(new Intent(getApplicationContext(), FacebookScreen.class));
                 finish();
             }
@@ -85,6 +118,10 @@ public class MainActivity extends AppCompatActivity {
         binding.sharechat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if ( interstitialAd.isReady() )
+                {
+                    interstitialAd.showAd();
+                }
                 startActivity(new Intent(getApplicationContext(), ShareChatScreen.class));
                 finish();
             }
@@ -170,6 +207,50 @@ public class MainActivity extends AppCompatActivity {
         }).check();
     }
 
+    public void onAdLoaded(final MaxAd maxAd)
+    {
+        // Interstitial ad is ready to be shown. interstitialAd.isReady() will now return 'true'
+        // Reset retry attempt
+        retryAttempt = 0;
+    }
 
+    @Override
+    public void onAdLoadFailed(final String adUnitId, final MaxError error)
+    {
+        // Interstitial ad failed to load
+        // AppLovin recommends that you retry with exponentially higher delays up to a maximum delay (in this case 64 seconds)
+
+        retryAttempt++;
+        long delayMillis = TimeUnit.SECONDS.toMillis( (long) Math.pow( 2, Math.min( 6, retryAttempt ) ) );
+
+        new Handler().postDelayed(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                interstitialAd.loadAd();
+            }
+        }, delayMillis );
+    }
+
+    @Override
+    public void onAdDisplayFailed(final MaxAd maxAd, final MaxError error)
+    {
+        // Interstitial ad failed to display. AppLovin recommends that you load the next ad.
+        interstitialAd.loadAd();
+    }
+
+    @Override
+    public void onAdDisplayed(final MaxAd maxAd) {}
+
+    @Override
+    public void onAdClicked(final MaxAd maxAd) {}
+
+    @Override
+    public void onAdHidden(final MaxAd maxAd)
+    {
+        // Interstitial ad is hidden. Pre-load the next ad
+        interstitialAd.loadAd();
+    }
 
 }
