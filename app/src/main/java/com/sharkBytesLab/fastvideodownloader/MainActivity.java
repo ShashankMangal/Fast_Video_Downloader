@@ -74,15 +74,6 @@ public class MainActivity extends AppCompatActivity implements MaxAdListener{
         // Load the first ad
         interstitialAd.loadAd();
 
-        binding.whatsapp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-//                startActivity(new Intent(getApplicationContext(), WhatsappScreen.class));
-//                finish();
-               Toast.makeText(getApplicationContext(), "This feature is Under Maintenance.", Toast.LENGTH_SHORT).show();
-            }
-        });
-
         binding.instagram.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -106,15 +97,6 @@ public class MainActivity extends AppCompatActivity implements MaxAdListener{
             }
         });
 
-        binding.youtube.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-//                startActivity(new Intent(getApplicationContext(), YoutubeScreen.class));
-//                finish();
-                Toast.makeText(getApplicationContext(), "This feature is Under Maintenance.", Toast.LENGTH_SHORT).show();
-            }
-        });
-
         binding.sharechat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -131,7 +113,15 @@ public class MainActivity extends AppCompatActivity implements MaxAdListener{
             @Override
             public void onClick(View view) {
 
-                Toast.makeText(getApplicationContext(), "This feature is Under Maintenance.", Toast.LENGTH_SHORT).show();
+                Uri uri = Uri.parse("https://play.google.com/store/apps/details?id=" + getPackageName());
+                Intent i = new Intent(Intent.ACTION_VIEW, uri);
+
+                try {
+                    startActivity(i);
+                } catch (Exception e) {
+
+                    Toast.makeText(getApplicationContext(), "Error :" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
 
             }
         });
