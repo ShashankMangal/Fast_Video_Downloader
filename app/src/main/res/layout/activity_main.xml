@@ -508,7 +508,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             xmlns:maxads="http://schemas.applovin.com/android/1.0"
-            maxads:adUnitId="0a15403f92e254ba"
+            maxads:adUnitId="2fe83d34354b5413"
             android:layout_width="match_parent"
             android:layout_height="50dp">
         </com.applovin.mediation.ads.MaxAdView>

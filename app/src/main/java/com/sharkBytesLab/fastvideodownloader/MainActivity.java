@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity implements MaxAdListener{
         } );
 
         binding.applovinAd.loadAd();
-        interstitialAd = new MaxInterstitialAd( "5f8c3eee990b8511", this );
+        interstitialAd = new MaxInterstitialAd( "4912099ec0993e61", this );
         interstitialAd.setListener( this );
         // Load the first ad
         interstitialAd.loadAd();
@@ -202,6 +202,7 @@ public class MainActivity extends AppCompatActivity implements MaxAdListener{
         // Interstitial ad is ready to be shown. interstitialAd.isReady() will now return 'true'
         // Reset retry attempt
         retryAttempt = 0;
+        Toast.makeText(this, "Ready!", Toast.LENGTH_SHORT).show();
     }
 
     @Override
